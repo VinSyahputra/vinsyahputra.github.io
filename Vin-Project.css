@@ -1,0 +1,49 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+canvas{
+    display: block;
+}
+#menu{
+    width: 100%;
+    height:100vh;
+    position: fixed;
+    z-index: 4;
+}
+p{
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    z-index: 2;
+    color: white;
+}
+.keyboard{
+    position: absolute;
+    bottom: 10vh;
+    left: 5vw;
+    display: grid;
+    grid-template-areas: 
+    ". w ."
+    "a s d"
+    ;
+    grid-gap: 10px;
+}
+.keyboard > button{
+    padding: 10px;
+    border-radius: 50%;
+    user-select: none;
+}
+.keyboard #w{
+    grid-area: w;
+}
+.keyboard #s{
+    grid-area: s;
+}
+.keyboard #a{
+    grid-area: a;
+}
+.keyboard #d{
+    grid-area: d;
+}

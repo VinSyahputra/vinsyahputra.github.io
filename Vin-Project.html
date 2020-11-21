@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="initial-scale=1, width=device-width">
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="Vin-Project.css">
+<title>Vin. Site</title>
+</head>
+<body>
+
+    <button id="menu">Mulai</button>
+
+    <p>N: Ngalor, Ngidul, Ngulon, Ngetan</p>
+
+    <div class="keyboard">
+        <button id="w">N</button>
+        <button id="s">N</button>
+        <button id="a">N</button>
+        <button id="d">N</button>
+    </div>
+
+    <script src="script/three.js"></script>
+    <script src="script/PointerLockControls2.js"></script>
+    <script src="script/cannon.js"></script>
+    <script src="script/CannonDebugRenderer.js"></script>
+<script>
+
+var width, height, senter, camera, renderer, scene, plight,controls, camControl,ambientLight,Plane, ground, mesh, meshBody, flashlight, spotlight,loader,textGeo,text,textBody;
+var debugrender;
+var timeStamp;
+var world,plane,  planeBody;
+var clock = new THREE.Clock();
+var time = Date.now();
+const btn = document.querySelector('button#menu');
+var gamepad = document.querySelectorAll('.keyboard > button');
+
+if (window.matchMedia("(orientation: landscape)").matches) {
+   // you're in LANDSCAPE mode
+   console.log('landscape');
+}else{
+    console.log('potrait');
+}
+
+init();
+render();
+
+
+
+function init(){
+
+    
+    let fov = 90;
+    let near = .1;
+    let far = 1000;
+
+    width = window.innerWidth;
+    height = window.innerHeight;
+    let aspect = width / height;
+
+    //important initial
+    scene = new THREE.Scene();
+    camera = new THREE.PerspectiveCamera(fov,aspect,near,far);
+    camera.position.set(0,.57,0);
+
+    //renderer
+    renderer = new THREE.WebGLRenderer({antialias: true});
+    renderer.setClearColor('#dedede');
+    renderer.setSize(width,height);
+    document.body.appendChild(renderer.domElement);
+
+    //Shadow Effect 
+    renderer.shadowMapEnabled = true;
+    renderer.shadowMapSoft = true;
+
+    window.addEventListener('resize',e=>{
+        let w = window.innerWidth;
+        let h = window.innerHeight;
+        renderer.setSize(w,h);
+        camera.aspect = w/h;
+        camera.updateProjectionMatrix();
+    });
+
+    //Button Toggle PLAY or PAUSE
+    let toggle = true;
+    btn.addEventListener('click',e=>{
+        e.preventDefault();
+        
+        if(toggle == true){
+            document.body.requestPointerLock();
+            btn.style.display = 'none';
+        }else{
+            document.body.exitPointerLock();
+            btn.style.display = 'block';
+        }
+        toggle = !toggle;
+    })
+
+    //background texture
+    const Loader = new THREE.TextureLoader();
+	Loader.load('img/sky.jpg',function(texture){
+		scene.background = texture;
+	})
+
+
+    //Declare Texture image
+    let texture = new THREE.TextureLoader().load('img/bump3.jpg');
+    let textureBump = new THREE.TextureLoader().load('img/bump.jpg');
+    let vin =  new THREE.TextureLoader().load('img/vin.png');
+    let buron = [
+        new THREE.MeshPhongMaterial({
+            map: new THREE.TextureLoader().load('img/mapel.png')
+        }),
+        new THREE.MeshPhongMaterial({
+            map: new THREE.TextureLoader().load('img/mapel.png')
+        }),
+        new THREE.MeshPhongMaterial({
+            map: new THREE.TextureLoader().load('img/mapel.png')
+        }),
+        new THREE.MeshPhongMaterial({
+            map: new THREE.TextureLoader().load('img/mapel.png')
+        }),
+        new THREE.MeshPhongMaterial({
+            map: new THREE.TextureLoader().load('img/vin.png')
+        }),
+        new THREE.MeshPhongMaterial({
+            map: new THREE.TextureLoader().load('img/vin.png')
+        })
+        
+
+    ];
+
+    // texture repeating
+    texture.wrapS = THREE.RepeatWrapping;
+    texture.wrapT = THREE.RepeatWrapping;
+    texture.repeat.set(30,30);   
+
+
+    // //AudioListener
+    // const listener = new THREE.AudioListener();
+    // camera.add(listener);
+
+    // //AudioPosition
+    // const sound = new THREE.PositionalAudio(listener);
+
+    // //load AudioBuffer
+    // const audioBuffer = new THREE.AudioLoader();
+    // audioBuffer.load('audio/breath.ogg',buffer=>{
+    //     sound.setBuffer(buffer);
+    //     sound.setRefDistance(3); //audio akan menurun ketika jarak 3
+    //     sound.setLoop(true); //loop audio
+    //     sound.play(); //play audio
+    // })
+
+
+   //pencahayaan menyeluruh
+    ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
+	scene.add(ambientLight);
+
+
+   //Declare Cannon World
+    world = new CANNON.World();
+    world.gravity.set(0,-50,0); //atur gravity di world
+    world.broadphase = new CANNON.NaiveBroadphase(); // untuk menentukan benda yang diperhitungkan dalam collision
+
+    //ground physic
+    ground = new CANNON.Body({shape:new CANNON.Plane(),mass:0});
+    ground.quaternion.setFromAxisAngle(new CANNON.Vec3(1,0,0), - Math.PI/2);
+    world.addBody(ground);
+
+    //visual ground
+    Plane = new THREE.Mesh(new THREE.PlaneGeometry(200,200,40,40), new THREE.MeshPhongMaterial({
+        color:0xaaaaff,
+        map: texture,
+        bumpMap:textureBump
+        }));
+    Plane.rotation.x -=1.57;
+    Plane.receiveShadow = true;
+    scene.add(Plane);
+
+    //camera have a physic
+    camControl = new CANNON.Body({shape: new CANNON.Sphere(.5), mass:5});
+    camControl.linearDamping = 0.9;
+    camControl.position.set(0,0,0);
+    world.addBody(camControl);
+
+    //Controls 
+    controls = new PointerLockControls(camera,camControl);
+    controls.enabled = true;
+    scene.add(controls.getObject());
+    
+    //physic box mesh
+    meshBody = new CANNON.Body({shape: new CANNON.Box(new CANNON.Vec3(10 / 2,20 / 2 ,2 / 2)),mass:5});
+    meshBody.position.set(10,10,-15);
+    world.addBody(meshBody);
+
+    //box mesh
+    mesh = new THREE.Mesh(new THREE.BoxGeometry(10,20,2), buron);
+    mesh.castShadow = true;
+    mesh.receiveShadow = true;
+    scene.add(mesh);
+    
+    //flashlight
+    flashlight = new THREE.Mesh(new THREE.CylinderGeometry(.5,.2,1,30), new THREE.MeshLambertMaterial({color: 0xaaffff}));
+    flashlight.rotateX(Math.PI/2);
+    camera.add(flashlight);
+    
+    //lighting from flashlight
+    spotlight = new THREE.SpotLight(0xffffff);
+    spotlight.power = 6;
+    spotlight.distance = 20;
+    spotlight.penumbra = 0.1;
+    spotlight.angle = .2;
+    spotlight.castShadow = true;
+	spotlight.rotateX(Math.PI/2);
+
+    //add lighting to flashlight
+    flashlight.add(spotlight);
+    flashlight.add(spotlight.target);
+    
+    // textBody = new CANNON.Body({shape: new CANNON.Box(new CANNON.Vec3(1.6,.5,.2)),mass:5});
+    // textBody.position.set(1.8,0,0);
+    // world.addBody(textBody);
+
+    //function text geometry
+    loader = new THREE.FontLoader().load('fonts/optimer_regular.typeface.json',font=>{
+        textGeo = new THREE.TextBufferGeometry('Havin',{
+            font: font,
+            size: 1,
+            height: .2
+        });
+        text = new THREE.Mesh(textGeo,new THREE.MeshPhysicalMaterial({color:0xaaddff}));
+        text.castShadow = true;
+        text.receiveShadow = true;
+        scene.add(text);
+    })
+
+    timeStamp = 1/60; //waktu update physic engine
+    debugrender = new THREE.CannonDebugRenderer(scene,world); // untuk menampilkan cara kerja physic engine
+}
+
+function render(){
+    world.step(timeStamp); //waktu pergerakan world
+    let delta = clock.getDelta();
+    // debugrender.update(); //digunakan untuk melihat physic engine pada mesh
+
+
+    //copy position and rotation 
+    flashlight.position.copy(camera.position);
+    flashlight.position.x +=1;
+    flashlight.position.y -=1;
+    flashlight.position.z -=.2;
+
+    Plane.position.copy(ground.position);
+    Plane.quaternion.copy(ground.quaternion);
+
+    mesh.position.copy(meshBody.position);
+    mesh.quaternion.copy(meshBody.quaternion);
+
+    // text.position.copy(textBody.position);
+    // text.quaternion.copy(textBody.quaternion);
+
+    requestAnimationFrame(render); 
+    renderer.autoClear = false;
+    renderer.clear();
+    controls.update( Date.now() - time );
+    renderer.render(scene,camera);
+    time = Date.now();
+}
+
+
+// screen.orientation.lock('landscape');
+
+</script>
+</body>
+</html>
