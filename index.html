@@ -135,21 +135,21 @@ function init(){
     texture.repeat.set(30,30);   
 
 
-    // //AudioListener
-    // const listener = new THREE.AudioListener();
-    // camera.add(listener);
+    //AudioListener
+    const listener = new THREE.AudioListener();
+    camera.add(listener);
 
-    // //AudioPosition
-    // const sound = new THREE.PositionalAudio(listener);
+    //AudioPosition
+    const sound = new THREE.PositionalAudio(listener);
 
-    // //load AudioBuffer
-    // const audioBuffer = new THREE.AudioLoader();
-    // audioBuffer.load('audio/breath.ogg',buffer=>{
-    //     sound.setBuffer(buffer);
-    //     sound.setRefDistance(3); //audio akan menurun ketika jarak 3
-    //     sound.setLoop(true); //loop audio
-    //     sound.play(); //play audio
-    // })
+    //load AudioBuffer
+    const audioBuffer = new THREE.AudioLoader();
+    audioBuffer.load('audio/breath.ogg',buffer=>{
+        sound.setBuffer(buffer);
+        sound.setRefDistance(3); //audio akan menurun ketika jarak 3
+        sound.setLoop(true); //loop audio
+        sound.play(); //play audio
+    })
 
 
    //pencahayaan menyeluruh
