@@ -8,7 +8,7 @@
     var velocityFactor = 0.2;
     var jumpVelocity = 20;
     var scope = this;
-    var gamepad = document.querySelectorAll('.keyboard > button');
+    var gamepad = document.querySelectorAll('.keyboard > .btn');
     var pitchObject = new THREE.Object3D();
     pitchObject.add( camera );
 
@@ -56,6 +56,19 @@
 
         yawObject.rotation.y -= movementX * 0.002;
         pitchObject.rotation.x -= movementY * 0.002;
+
+        pitchObject.rotation.x = Math.max( - PI_2, Math.min( PI_2, pitchObject.rotation.x ) );
+    };
+
+    var onTouchMove = function ( event ) {
+
+        if ( scope.enabled === false ) return;
+
+        var movementX = event.pageX || event.mozpageX || event.webkitpageX || 0;
+        var movementY = event.pageY || event.mozpageY || event.webkitpageY || 0;
+
+        yawObject.rotation.y -= pageX * 0.002;
+        pitchObject.rotation.x -= pageY * 0.002;
 
         pitchObject.rotation.x = Math.max( - PI_2, Math.min( PI_2, pitchObject.rotation.x ) );
     };
@@ -152,6 +165,7 @@
     };
 
     document.addEventListener( 'mousemove', onMouseMove, false );
+    document.addEventListener( 'touchmove', onTouchMove, false );
     document.addEventListener( 'keydown', onKeyDown, false );
     document.addEventListener( 'keyup', onKeyUp, false );
     gamepad.forEach(e=>{
