@@ -24,6 +24,10 @@ p{
     bottom: 10vh;
     left: 5vw;
     display: grid;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     grid-template-areas: 
     ". w ."
     "a s d"
