@@ -33,6 +33,9 @@ p{
 .keyboard > .btn{
     padding: 10px;
     border-radius: 50%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
     border: 1px solid #ffffff;
     color: #fff;
