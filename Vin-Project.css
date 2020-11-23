@@ -17,6 +17,10 @@ p{
     top: 10px;
     left: 5px;
     z-index: 2;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     color: white;
 }
 .keyboard{
