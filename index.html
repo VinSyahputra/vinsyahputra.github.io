@@ -40,7 +40,14 @@ if (window.matchMedia("(orientation: landscape)").matches) {
 }else{
     console.log('potrait');
 }
-
+if(window.innerWidth < 769){
+   keyboard.style.display = 'grid';
+   console.log('mobile');
+}else{
+   keyboard.style.display = 'none';
+   console.log('desktop');
+}
+	
 init();
 render();
 
@@ -96,10 +103,10 @@ function init(){
     })
 
     //background texture
-    const Loader = new THREE.TextureLoader();
-	Loader.load('img/sky.jpg',function(texture){
-		scene.background = texture;
-	})
+//     const Loader = new THREE.TextureLoader();
+// 	Loader.load('img/sky.jpg',function(texture){
+// 		scene.background = texture;
+// 	})
 
 
     //Declare Texture image
@@ -151,7 +158,11 @@ function init(){
     //     sound.play(); //play audio
     // })
 
-
+    var bunker = new THREE.Mesh(new THREE.SphereGeometry(200,50,50), new THREE.MeshPhongMaterial({map: worldTexture, side: THREE.BackSide}));
+    bunker.position.set(0,50,0);
+    scene.add(bunker);
+	
+	
    //pencahayaan menyeluruh
     ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
 	scene.add(ambientLight);
