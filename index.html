@@ -13,6 +13,19 @@
     .bg-blue {
         background-color: #1E5982;
     }
+    @media (min-width: 768px) {
+        #button {
+            height: 75% !important;
+        }
+    }
+    @media (min-width: 992px) {
+        #button {
+            height: 90% !important;
+            width: 90% !important;
+            max-height: 200px;
+            max-width: 200px;
+        }
+    }
 </style>
 </head>
 <body style="margin: 0;">
@@ -35,7 +48,7 @@
                     <div id="box-content" class="w-75 bg-light h-75 rounded-3"></div>
                 </div>
                 <div id="right" class="w-25 h-100 d-inline-flex">
-                    <div id="button" class="w-75 bg-light h-100 mt-auto ms-auto d-inline-flex" style="border-top-left-radius: 50%; border-bottom-left-radius: 50%;">
+                    <div id="button" class="w-100 bg-light h-50 h-sm-75 mt-auto ms-auto d-inline-flex" style="border-top-left-radius: 50%; border-bottom-left-radius: 50%;">
                         <img src="btnImg.png" class="w-auto h-75 mx-auto my-auto">
                     </div>
                 </div>
