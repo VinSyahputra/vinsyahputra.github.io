@@ -7,20 +7,37 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <title>Vin. Site</title>
 <style>
+    @font-face {
+        font-family: LuckyFont;
+        src: url(LuckyFont.ttf);
+    }
+
+    #title {
+        font-family: LuckyFont;
+        letter-spacing: 3px;
+    }
+    
+    #btnAim {
+        transform: scale(1);
+        transition: .2s;
+    }
+    #btnAim:active {
+        transform: scale(.95);
+    }
+    .arrow{
+        transform: scale(1);
+        transition: .2s; 
+    }
+    .arrow:active{
+        transform: scale(.9);
+    }
     .text-blue {
         color: #1E5982;
     }
     .bg-blue {
         background-color: #1E5982;
     }
-    #button > img{
-        transform: scale(1);
-        transition: transform .2s ease-in-out;
-    }
-    #button > img:hover {
-        transform: scale(.95);
-        transition: transform .2s ease-in-out;
-    }
+
     @media (max-width: 576px) {
         #left {
             width: 80% !important;
@@ -59,28 +76,39 @@
             <div id="logo" class="px-2 d-flex justify-content-center align-items-center">
                 <img src="logo.png" alt="logo UAD" width="60" height="auto">
             </div>
-            <div id="title" class="d-flex justify-content-center align-items-center w-100">
-                <div class="h2 text-blue">TOUR GUIDE</div>
+            <div id="title" class="d-flex w-100">
+                <div class="h2 text-blue my-auto mx-auto" id="title">TOUR GUIDE</div>
             </div>
         </header>
-        <iframe src="aframe.html" class="w-100 my-0" style="height: 60vh;"></iframe> 
+        <iframe src="aframe.html" class="w-100 my-0" style="height: 60vh; "></iframe> 
   
-        <section id="controller" class="bg-blue rounded-top" style="height: 30vh !important;">
+        <section id="controller" class="bg-blue rounded-top" style="height: 30vh !important; margin-top: -8px; z-index: 10;">
             <div class="d-flex h-100 gap-2">
                 <div id="left" class="w-75 h-100 d-flex justify-content-center align-items-center gap-1">
-                    <div id="slideLeft" style="width:15px; height: 30px;"><img class="w-100 h-100" src="left.png" alt=""></div>
-                    <div id="box-content" class="w-75 bg-light h-75 rounded-3"></div>
-                    <div id="slideRight" style="width:15px; height: 30px;"><img class="w-100 h-100" src="right.png" alt=""></div>
+                    <div class="arrow" id="slideLeft" style="width:15px; height: 30px;"><img class="w-100 h-100" src="left.png" alt=""></div>
+
+                    <div id="box-content" class="w-75 bg-light h-75 rounded-3">
+                        <h5 class="text-center border-bottom border-dark">Informasi</h5>
+                        <div class=""></div>
+                    </div>
+
+                    <div class="arrow" id="slideRight" style="width:15px; height: 30px;"><img class="w-100 h-100" src="right.png" alt=""></div>
                 </div>
                 <div id="right" class="w-25 h-100 d-inline-flex">
                     <div id="button" class="w-100 bg-light h-50 h-sm-75 mt-auto ms-auto d-inline-flex" style="border-top-left-radius: 50%; border-bottom-left-radius: 50%;">
-                        <img src="btnImg.png" class="w-auto h-75 mx-auto my-auto">
+                        <img src="btnImg.png" class="w-auto h-75 mx-auto my-auto" id="btnAim">
                     </div>
                 </div>
             </div>
         </section>
     </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script></script>
+<script>
+    const btn = document.querySelector('#btnAim');
+    btn.addEventListener('click', e=>{
+        e.preventDefault();
+        
+    })
+</script>
 </body>
 </html>
