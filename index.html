@@ -1,114 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta name="viewport" content="initial-scale=1, width=device-width">
-<meta charset="UTF-8">
-<meta http-equiv='X-UA-Compatible' content='IE=edge'>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<title>Vin. Site</title>
-<style>
-    @font-face {
-        font-family: LuckyFont;
-        src: url(LuckyFont.ttf);
-    }
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    #title {
-        font-family: LuckyFont;
-        letter-spacing: 3px;
-    }
-    
-    #btnAim {
-        transform: scale(1);
-        transition: .2s;
-    }
-    #btnAim:active {
-        transform: scale(.95);
-    }
-    .arrow{
-        transform: scale(1);
-        transition: .2s; 
-    }
-    .arrow:active{
-        transform: scale(.9);
-    }
-    .text-blue {
-        color: #1E5982;
-    }
-    .bg-blue {
-        background-color: #1E5982;
-    }
+  <title>Portfolio - Havin Fahru</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-    @media (max-width: 576px) {
-        #left {
-            width: 80% !important;
-        }
-        #left #box-content{
-            width: 80% !important;
-        }
-        #right {
-            width: 20% !important;
-        }
-        #right #button {
-            height: 80px !important;
-            width: 80px !important;
-        }
-    }
-    @media (min-width: 768px) {
-        #button {
-            height: 75% !important;
-        }
-    }
-    @media (min-width: 992px) {
-        #button {
-            height: 90% !important;
-            width: 90% !important;
-            max-height: 200px;
-            max-width: 200px;
-        }
-    }
-</style>
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,500,500i,600,600i,700,700i,900,900i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+
 </head>
-<body style="margin: 0;">
 
-    
-    <div class="container">
-        <header class="w-100 bg-light py-3 px-2 d-flex rounded-bottom rounded-3" style="height: 10vh; z-index: 10;">
-            <div id="logo" class="px-2 d-flex justify-content-center align-items-center">
-                <img src="logo.png" alt="logo UAD" width="60" height="auto">
-            </div>
-            <div id="title" class="d-flex w-100">
-                <div class="h2 text-blue my-auto mx-auto" id="title">TOUR GUIDE</div>
-            </div>
-        </header>
-        <iframe src="aframe.html" class="w-100 my-0" style="height: 60vh; "></iframe> 
-  
-        <section id="controller" class="bg-blue rounded-top" style="height: 30vh !important; margin-top: -8px; z-index: 10;">
-            <div class="d-flex h-100 gap-2">
-                <div id="left" class="w-75 h-100 d-flex justify-content-center align-items-center gap-1">
-                    <div class="arrow" id="slideLeft" style="width:15px; height: 30px;"><img class="w-100 h-100" src="left.png" alt=""></div>
+<body>
 
-                    <div id="box-content" class="w-75 bg-light h-75 rounded-3">
-                        <h5 class="text-center border-bottom border-dark">Informasi</h5>
-                        <div class=""></div>
-                    </div>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center justify-content-between">
 
-                    <div class="arrow" id="slideRight" style="width:15px; height: 30px;"><img class="w-100 h-100" src="right.png" alt=""></div>
-                </div>
-                <div id="right" class="w-25 h-100 d-inline-flex">
-                    <div id="button" class="w-100 bg-light h-50 h-sm-75 mt-auto ms-auto d-inline-flex" style="border-top-left-radius: 50%; border-bottom-left-radius: 50%;">
-                        <img src="btnImg.png" class="w-auto h-75 mx-auto my-auto" id="btnAim">
-                    </div>
-                </div>
-            </div>
-        </section>
+      <a href="index.html" class="logo">Vin.Site</a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link  scrollto" href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
     </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script>
-    const btn = document.querySelector('#btnAim');
-    btn.addEventListener('click', e=>{
-        e.preventDefault();
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <div id="hero" class="home">
+
+    <div class="container">
+      <div class="hero-content">
+        <h1>I'm <span class="typed" data-typed-items="Havin Fahru, PHP Developer, Backend Developer, Freelancer, Website Developer"></span></h1>
+        <p>PHP Developer, Backend Developer, Freelancer, Website Developer</p>
+
+        <ul class="list-unstyled list-social">
+          <li><a href="https://github.com/VinSyahputra/"><i class="bi bi-github"></i></a></li>
+          <li><a href="https://www.instagram.com/havindifm/"><i class="bi bi-instagram"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/havin-fahru-575644239/"><i class="bi bi-linkedin"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <div id="about" class="paddsection">
+      <div class="container">
+        <div class="row justify-content-between">
+
+          <div class="col-lg-4 ">
+            <div class="div-img-bg">
+              <div class="about-img">
+                <img src="assets/img/me.jpg" class="img-responsive" alt="me">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="about-descr">
+
+              <p class="p-heading">I'm a Backend Developer from Yogyakarta city who wants to be a <span class="h3">Professional</span class="h3">. </p>
+              <p class="separator">I started my Programmer career when i was still in college. as a Programmer I have the ability to adapt and learn quickly so as to be able to deal with changes in technology. </p>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div><!-- End About Section -->
+
+    <!-- ======= Services Section ======= -->
+    <div id="services">
+      <div class="container">
+
+        <div class="services-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="services-block">
+                <i class='bx bxl-php'></i>
+                <span>PHP</span>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="services-block">
+                <i class='bx bxl-javascript'></i>
+                <span>JAVASCRIPT</span>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="services-block">
+                <i class='bx bxs-hot'></i>
+                <span>CODEIGNITER</span>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="services-block">
+                <i class='bx bx-cube-alt'></i>
+                <span>LARAVEL</span>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="services-block">
+                <i class='bx bxs-data' ></i>
+                <span>MYSQL</span>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="services-block">
+                <i class='bx bx-code-alt' ></i>
+                <span>HTML & CSS</span>
+              </div>
+            </div><!-- End testimonial item -->
+
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </div><!-- End Services Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <div id="portfolio" class="paddsection">
+
+      <div class="container">
+        <div class="section-title text-center">
+          <h2>My Portfolio</h2>
+        </div>
+      </div>
+
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-app">App</li>
+              <li data-filter=".filter-game">Game</li>
+              <li data-filter=".filter-web">Web</li>
+              <li data-filter=".filter-service">Service</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <img src="assets/img/portfolio/app1.png" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Sistem Informasi Peminjaman Ruangan</h4>
+              <p>Web</p>
+              <a href="assets/img/portfolio/app1.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="web sipur"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html?portfolio=sipur" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <img src="assets/img/portfolio/app2.png" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Sistem Manajemen Kontrak</h4>
+              <p>Web</p>
+              <a href="assets/img/portfolio/app2.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="web simak"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html?portfolio=simak" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-game">
+            <img src="assets/img/portfolio/app3.png" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Game Alfabeta</h4>
+              <p>Game</p>
+              <a href="assets/img/portfolio/app3.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="game alfabeta"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html?portfolio=alfabeta" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img src="assets/img/portfolio/app4.png" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>UAD Tour Guide</h4>
+              <p>App</p>
+              <a href="assets/img/portfolio/app4.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="app tour guide"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html?portfolio=tourguide" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </div><!-- End Portfolio Section -->
+
+
+    <!-- ======= Contact Section ======= -->
+    <div id="contact" class="paddsection">
+      <div class="container">
+        <h2 class="text-center">WHY HIRE ME ?</h2>
+        <div class="row justify-content-center my-3">
+          <div class="col-8 col-md-6 col-lg-3 text-center">
+            <h5>adaptive</h5>
+            <p class="my-1">as a Programmer I have the ability to adapt and learn quickly so as to be able to deal with changes in technology</p>
+          </div>
+          <div class="col-8 col-md-6 col-lg-3 text-center">
+            <h5>initiative</h5>
+            <p class="my-1">have self-awareness to do something to fulfill a thing</p>
+          </div>
+          <div class="col-8 col-md-6 col-lg-3 text-center">
+            <h5>hard worker</h5>
+            <p class="my-1">someone who works hard and is patient in going through the process to achieve his goals</p>
+          </div>
+          <div class="col-8 col-md-6 col-lg-3 text-center">
+            <h5>good communication</h5>
+            <p class="my-1">have good communication so that I can carry out the task well</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <div id="footer" class="text-center">
+    <div class="container">
+      <div class="socials-media text-center">
+        <h2 class="text-secondary">GET IN TOUCH</h2>
+        <p>For business inquiry please send email : <a href="mailto:havindifm@gmail.com" class="text-primary">havindifm@gmail.com</a> </p>
         
-    })
-</script>
+      </div>
+
+      
+
+    </div>
+  </div><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
 </body>
+
 </html>
