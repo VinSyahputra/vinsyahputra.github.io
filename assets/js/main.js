@@ -8,15 +8,6 @@
   "use strict";
 
   /**
-   * GSAP + ScrollTrigger registration
-   * (PRD 01 §3.5 — vendored locally at assets/vendor/gsap/)
-   */
-  const hasGsap = typeof window.gsap !== "undefined";
-  if (hasGsap && typeof window.ScrollTrigger !== "undefined") {
-    gsap.registerPlugin(ScrollTrigger);
-  }
-
-  /**
    * Easy selector helper function
    */
   const select = (el, all = false) => {
@@ -216,22 +207,6 @@
   });
 
   /**
-   * Portfolio reveal + Isotope integration (PRD 01 §3.4, §3.5)
-   * Isotope v3 manages item display/opacity itself on filtering, so the
-   * GSAP reveal runs once per item and then hands the inline style back
-   * (clearProps) — that is what keeps filtered-in items from sticking at
-   * opacity:0. ScrollTrigger is refreshed after every arrange.
-   */
-  const portfolioItems = select('.portfolio-item', true);
-  let portfolioFilterActive = false;
-
-  const revealFilteredPortfolio = () => {
-    if (!hasGsap) return;
-    const visible = portfolioItems.filter(el => el.style.display !== 'none');
-    gsap.set(visible, { clearProps: 'opacity,transform' });
-  };
-
-  /**
    * Porfolio isotope and filter
    */
   window.addEventListener('load', () => {
@@ -244,15 +219,6 @@
 
       let portfolioFilters = select('#portfolio-flters li', true);
 
-      portfolioIsotope.on('arrangeComplete', function() {
-        if (!portfolioFilterActive) return;
-        portfolioFilterActive = false;
-        revealFilteredPortfolio();
-        if (typeof window.ScrollTrigger !== 'undefined') {
-          ScrollTrigger.refresh();
-        }
-      });
-
       on('click', '#portfolio-flters li', function(e) {
         e.preventDefault();
         portfolioFilters.forEach(function(el) {
@@ -260,16 +226,11 @@
         });
         this.classList.add('filter-active');
 
-        portfolioFilterActive = true;
         portfolioIsotope.arrange({
           filter: this.getAttribute('data-filter')
         });
 
       }, true);
-
-      if (typeof window.ScrollTrigger !== 'undefined') {
-        ScrollTrigger.refresh();
-      }
     }
 
   });
@@ -297,94 +258,5 @@
       clickable: true
     }
   });
-
-  /**
-   * GSAP animation setup — responsive & reduced-motion aware (PRD 01 §3.5 poin 5)
-   * gsap.matchMedia() is the single place that decides what runs:
-   *   - reduce  : animations are switched off entirely, content stays visible
-   *   - desktop : full stagger + hero background parallax
-   *   - mobile  : lighter travel distance, no parallax
-   * Only transform/opacity are animated, never layout properties.
-   */
-  if (hasGsap && typeof window.ScrollTrigger !== 'undefined') {
-    const heroItems = select('[data-hero]', true);
-    const revealEls = select('[data-reveal]', true);
-    const heroBg = select('#hero .hero-bg');
-    const mm = gsap.matchMedia();
-
-    mm.add({
-      reduce: '(prefers-reduced-motion: reduce)',
-      desktop: '(prefers-reduced-motion: no-preference) and (min-width: 768px)',
-      mobile: '(prefers-reduced-motion: no-preference) and (max-width: 767px)'
-    }, (context) => {
-      const conditions = context.conditions || {};
-
-      if (conditions.reduce) {
-        // No animation at all — make sure nothing is left hidden.
-        gsap.set([].concat(heroItems, revealEls, portfolioItems), { clearProps: 'opacity,transform' });
-        return;
-      }
-
-      const distance = conditions.mobile ? 18 : 30;
-
-      if (heroItems.length) {
-        gsap.set(heroItems, { opacity: 0, y: distance });
-        gsap.timeline({ defaults: { ease: 'power3.out', duration: conditions.mobile ? 0.7 : 0.9 } })
-          .to(heroItems, { opacity: 1, y: 0, stagger: conditions.mobile ? 0.08 : 0.12 })
-          .fromTo('.hero-scroll-cue', { opacity: 0 }, { opacity: 1, duration: 0.6 }, '-=0.3');
-      }
-
-      if (conditions.desktop && heroBg) {
-        gsap.fromTo(heroBg,
-          { yPercent: -6 },
-          {
-            yPercent: 6,
-            ease: 'none',
-            scrollTrigger: {
-              trigger: '#hero',
-              start: 'top top',
-              end: 'bottom top',
-              scrub: true
-            }
-          }
-        );
-      }
-
-      if (revealEls.length) {
-        gsap.set(revealEls, { opacity: 0, y: distance });
-        ScrollTrigger.batch(revealEls, {
-          start: 'top 88%',
-          once: true,
-          onEnter: (batch) => gsap.to(batch, {
-            opacity: 1,
-            y: 0,
-            duration: conditions.mobile ? 0.6 : 0.8,
-            ease: 'power3.out',
-            stagger: 0.12,
-            overwrite: true
-          })
-        });
-      }
-
-      if (portfolioItems.length) {
-        // fromTo (not a pre-hide) so a filtered-in item can never stay invisible.
-        ScrollTrigger.batch(portfolioItems, {
-          start: 'top 92%',
-          once: true,
-          onEnter: (batch) => gsap.fromTo(batch,
-            { opacity: 0, y: distance },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 0.7,
-              ease: 'power3.out',
-              stagger: 0.1,
-              overwrite: true,
-              onComplete: () => gsap.set(batch, { clearProps: 'opacity,transform' })
-            })
-        });
-      }
-    });
-  }
 
 })()

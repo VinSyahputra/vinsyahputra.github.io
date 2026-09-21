@@ -5,16 +5,16 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Portfolio Details - Havin Fahru</title>
+  <title>Portfolio Details - Folio Bootstrap Template</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/favicon.png" rel="apple-touch-icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,500,500i,600,600i,700,700i,900,900i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -38,14 +38,16 @@
   <header id="header" class="fixed-top header-inner-pages">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="Havin Fahru"></a>
+      <a href="index.html" class="logo">Vin.Site</a>
+      <!-- Uncomment below if you prefer to use an text logo -->
+      <!-- <h1 class="logo"><a href="index.html">Folio</a></h1> -->
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto" href="index.html#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="index.html#about">About</a></li>
-          <li><a class="nav-link scrollto" href="index.html#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="index.html#footer">Contact</a></li>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link  scrollto" href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -63,8 +65,8 @@
           <h2>Portfolio Details</h2>
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#portfolio">Portfolio</a></li>
-            <li class="breadcrumb-current">Portfolio Details</li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li>Portfolio Details</li>
           </ol>
         </div>
 
@@ -77,7 +79,7 @@
 
         <div class="row gy-4">
 
-          <div class="col-lg-8" data-reveal>
+          <div class="col-lg-8">
             <video controls id="media">
               <source src="" type="video/mp4">
               
@@ -85,7 +87,7 @@
             </video>
           </div>
 
-          <div class="col-lg-4" data-reveal>
+          <div class="col-lg-4">
             <div class="portfolio-info">
               <h3>Project information</h3>
               <ul>
@@ -104,8 +106,10 @@
               </ul>
             </div>
             <div class="portfolio-description my-1">
-              <h2 class="portfolio-description-title">Portfolio detail</h2>
-              <p class="portfolio-description-text"></p>
+              <h2>This is an example of portfolio detail</h2>
+              <p>
+                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+              </p>
             </div>
           </div>
 
@@ -119,19 +123,18 @@
   <!-- ======= Footer ======= -->
   <div id="footer" class="text-center">
     <div class="container">
-      <div class="socials-media text-center" data-reveal>
-        <p class="section-eyebrow">Contact</p>
-        <h2>GET IN TOUCH</h2>
-        <p>For business inquiry please send email : <a href="mailto:havindifm@gmail.com">havindifm@gmail.com</a></p>
+      <div class="socials-media text-center">
 
         <ul class="list-unstyled">
-          <li><a href="https://github.com/VinSyahputra/" aria-label="GitHub"><i class="bi bi-github"></i></a></li>
-          <li><a href="https://www.instagram.com/havindifm/" aria-label="Instagram"><i class="bi bi-instagram"></i></a></li>
-          <li><a href="https://www.linkedin.com/in/havin-fahru-575644239/" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a></li>
+          <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+          <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+          <li><a href="#"><i class="bi bi-instagram"></i></a></li>
+          <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
         </ul>
 
-        <p class="footer-credit">&copy; Havin Fahru — Backend &amp; Web Developer</p>
       </div>
+
+      <p>&copy; Copyrights Folio. All rights reserved.</p>
 
     </div>
   </div><!-- End Footer -->
@@ -146,33 +149,30 @@
   <script src="assets/vendor/typed.js/typed.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
-  <!-- Animation Vendor JS Files -->
-  <script src="assets/vendor/gsap/gsap.min.js"></script>
-  <script src="assets/vendor/gsap/ScrollTrigger.min.js"></script>
-
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script>
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const portfolio = urlParams.get('portfolio');
+    const portfolio = urlParams.get('portfolio')
     let data;
 
     switch (portfolio) {
       case "sipur":
         data = {
           "nama": "Sistem Informasi Peminjaman Ruangan",
-          "kategori": "Sistem Informasi",
-          "klien": "Bank BPD DIY",
+          "kategori" : "Sistem Informasi",
+          "klien" : "Bank BPD DIY",
           "keterangan": "Sistem informasi yang digunakan untuk melakukan peminjaman ruangan yang sebelumnya dilakukan secara manual.",
         }
+        
         break;
 
       case "simak":
         data = {
           "nama": "Sistem Informasi Manajemen Kontrak",
-          "kategori": "Sistem Informasi",
-          "klien": "Bank BPD DIY",
+          "kategori" : "Sistem Informasi",
+          "klien" : "Bank BPD DIY",
           "keterangan": "Sistem informasi yang digunakan untuk memudahkan dalam melakukan manajemen kontrak dari asset yang dimiliki.",
         }
         break;
@@ -180,8 +180,8 @@
       case "alfabeta":
         data = {
           "nama": "Game Alfabeta",
-          "kategori": "Game",
-          "klien": "Dosen PGSD Universitas Ahmad Dahlan",
+          "kategori" : "Game",
+          "klien" : "Dosen PGSD Universitas Ahmad Dahlan",
           "keterangan": "Game belajar membaca yang digunakan sebagai media pembelajaran anak-anak Sekolah Dasar. Tidak hanya bermain Game, anak-anak juga dapat belajar dari materi yang tersedia didalamnya.",
         }
         break;
@@ -189,8 +189,8 @@
       case "tourguide":
         data = {
           "nama": "Aplikasi Tour Guide",
-          "kategori": "Aplikasi",
-          "klien": "Mahasiswa Universitas Ahmad Dahlan",
+          "kategori" : "Aplikasi",
+          "klien" : "Mahasiswa Universitas Ahmad Dahlan",
           "keterangan": "Aplikasi berbasis website yang menggunakan teknologi Augmented Reality. Aplikasi ini digunakan untuk memudahkan mahasiswa maupun tamu untuk mencari tempat yang tersedia di kampus 4 Universitas Ahmad Dahlan.",
         }
         break;
@@ -198,37 +198,18 @@
       default:
         break;
     }
+    console.log(data)
+    let media = document.querySelector('#media');
+    let keterangan = document.querySelector('.portfolio-description');
+    let list = document.querySelectorAll('.list');
 
-    const media = document.querySelector('#media');
-    const descriptionTitle = document.querySelector('.portfolio-description-title');
-    const descriptionText = document.querySelector('.portfolio-description-text');
-    const breadcrumbCurrent = document.querySelector('.breadcrumb-current');
-    const list = document.querySelectorAll('.list');
+    media.src = `/assets/media/${portfolio}.mp4`;
+    list[0].innerHTML = data.kategori
+    list[1].innerHTML = data.klien
+    list[2].innerHTML = data.nama
 
-    if (!data) {
-      // §5 poin 5 — parameter kosong / tidak dikenal tidak boleh melempar error.
-      document.title = 'Project tidak ditemukan - Havin Fahru';
-      if (descriptionTitle) descriptionTitle.textContent = 'Project tidak ditemukan';
-      if (descriptionText) descriptionText.textContent = 'Proyek yang kamu cari tidak tersedia. Silakan kembali ke daftar portfolio.';
-      list.forEach(function (el) { el.textContent = '—'; });
-      if (media) {
-        media.removeAttribute('src');
-        media.style.display = 'none';
-      }
-    } else {
-      // §5 poin 4 — isi hanya elemen teks, jangan timpa seluruh .portfolio-description.
-      // §5 poin 7 — title nyata, bukan nama template.
-      document.title = data.nama + ' - Havin Fahru';
-      if (descriptionTitle) descriptionTitle.textContent = data.nama;
-      if (descriptionText) descriptionText.textContent = data.keterangan;
-      if (breadcrumbCurrent) breadcrumbCurrent.textContent = data.nama;
-      list[0].textContent = data.kategori;
-      list[1].textContent = data.klien;
-      list[2].textContent = data.nama;
-      if (media) {
-        media.src = '/assets/media/' + portfolio + '.mp4';
-      }
-    }
+    keterangan.innerHTML = data.keterangan
+    
   </script>
 </body>
 
