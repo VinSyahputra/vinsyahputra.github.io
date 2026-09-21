@@ -11,10 +11,10 @@
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/favicon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,500,500i,600,600i,700,700i,900,900i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -35,14 +35,14 @@
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo">Vin.Site</a>
+      <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="Havin Fahru"></a>
 
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link  scrollto" href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="#footer">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -52,17 +52,24 @@
 
   <!-- ======= Hero Section ======= -->
   <div id="hero" class="home">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
 
     <div class="container">
       <div class="hero-content">
-        <h1>I'm <span class="typed" data-typed-items="Havin Fahru, PHP Developer, Backend Developer, Freelancer, Website Developer"></span></h1>
-        <p>PHP Developer, Backend Developer, Freelancer, Website Developer</p>
+        <p class="hero-eyebrow" data-hero="1">Backend &amp; Web Developer</p>
+        <h1 data-hero="2">I'm <span class="typed" data-typed-items="Havin Fahru, PHP Developer, Backend Developer, Freelancer, Website Developer"></span></h1>
+        <p class="hero-sub" data-hero="3">PHP Developer, Backend Developer, Freelancer, Website Developer</p>
 
-        <ul class="list-unstyled list-social">
-          <li><a href="https://github.com/VinSyahputra/"><i class="bi bi-github"></i></a></li>
-          <li><a href="https://www.instagram.com/havindifm/"><i class="bi bi-instagram"></i></a></li>
-          <li><a href="https://www.linkedin.com/in/havin-fahru-575644239/"><i class="bi bi-linkedin"></i></a></li>
+        <ul class="list-unstyled list-social" data-hero="4">
+          <li><a href="https://github.com/VinSyahputra/" aria-label="GitHub"><i class="bi bi-github"></i></a></li>
+          <li><a href="https://www.instagram.com/havindifm/" aria-label="Instagram"><i class="bi bi-instagram"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/havin-fahru-575644239/" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a></li>
         </ul>
+
+        <a href="#about" class="hero-scroll-cue scrollto" aria-label="Scroll to about section">
+          <span class="hero-scroll-cue-line"></span>
+        </a>
       </div>
     </div>
   </div><!-- End Hero -->
@@ -72,20 +79,23 @@
     <!-- ======= About Section ======= -->
     <div id="about" class="paddsection">
       <div class="container">
-        <div class="row justify-content-between">
+        <div class="row justify-content-between align-items-center">
 
-          <div class="col-lg-4 ">
-            <div class="div-img-bg">
-              <div class="about-img">
-                <img src="assets/img/me.jpg" class="img-responsive" alt="me">
+          <div class="col-lg-5">
+            <div class="about-media" data-reveal>
+              <div class="about-img about-img-main">
+                <img src="assets/img/me.jpg" class="img-responsive" alt="Havin Fahru">
               </div>
+              <img src="assets/img/me22.jpg" class="about-img-secondary" alt="" aria-hidden="true">
+              <img src="assets/img/avatar.jpg" class="about-avatar" alt="" aria-hidden="true">
             </div>
           </div>
 
-          <div class="col-lg-7">
-            <div class="about-descr">
+          <div class="col-lg-6">
+            <div class="about-descr" data-reveal>
 
-              <p class="p-heading">I'm a Backend Developer from Yogyakarta city who wants to be a <span class="h3">Professional</span class="h3">. </p>
+              <p class="section-eyebrow">About</p>
+              <p class="p-heading">I'm a Backend Developer from Yogyakarta city who wants to be a <span class="h3">Professional</span>.</p>
               <p class="separator">I started my Programmer career when i was still in college. as a Programmer I have the ability to adapt and learn quickly so as to be able to deal with changes in technology. </p>
 
             </div>
@@ -99,7 +109,7 @@
     <div id="services">
       <div class="container">
 
-        <div class="services-slider swiper" data-aos="fade-up" data-aos-delay="100">
+        <div class="services-slider swiper" data-reveal>
           <div class="swiper-wrapper">
 
             <div class="swiper-slide">
@@ -179,42 +189,50 @@
         <div class="row portfolio-container">
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="assets/img/portfolio/app1.png" class="img-fluid" alt="">
+            <div class="portfolio-media">
+              <img src="assets/img/portfolio/app1.png" class="img-fluid" alt="Sistem Informasi Peminjaman Ruangan">
+            </div>
             <div class="portfolio-info">
+              <span class="portfolio-tag">Web</span>
               <h4>Sistem Informasi Peminjaman Ruangan</h4>
-              <p>Web</p>
-              <a href="assets/img/portfolio/app1.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="web sipur"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html?portfolio=sipur" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="assets/img/portfolio/app1.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="web sipur" aria-label="Preview Sistem Informasi Peminjaman Ruangan"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html?portfolio=sipur" class="details-link" title="More Details" aria-label="Detail Sistem Informasi Peminjaman Ruangan"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="assets/img/portfolio/app2.png" class="img-fluid" alt="">
+            <div class="portfolio-media">
+              <img src="assets/img/portfolio/app2.png" class="img-fluid" alt="Sistem Manajemen Kontrak">
+            </div>
             <div class="portfolio-info">
+              <span class="portfolio-tag">Web</span>
               <h4>Sistem Manajemen Kontrak</h4>
-              <p>Web</p>
-              <a href="assets/img/portfolio/app2.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="web simak"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html?portfolio=simak" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="assets/img/portfolio/app2.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="web simak" aria-label="Preview Sistem Manajemen Kontrak"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html?portfolio=simak" class="details-link" title="More Details" aria-label="Detail Sistem Manajemen Kontrak"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-game">
-            <img src="assets/img/portfolio/app3.png" class="img-fluid" alt="">
+            <div class="portfolio-media">
+              <img src="assets/img/portfolio/app3.png" class="img-fluid" alt="Game Alfabeta">
+            </div>
             <div class="portfolio-info">
+              <span class="portfolio-tag">Game</span>
               <h4>Game Alfabeta</h4>
-              <p>Game</p>
-              <a href="assets/img/portfolio/app3.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="game alfabeta"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html?portfolio=alfabeta" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="assets/img/portfolio/app3.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="game alfabeta" aria-label="Preview Game Alfabeta"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html?portfolio=alfabeta" class="details-link" title="More Details" aria-label="Detail Game Alfabeta"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="assets/img/portfolio/app4.png" class="img-fluid" alt="">
+            <div class="portfolio-media">
+              <img src="assets/img/portfolio/app4.png" class="img-fluid" alt="UAD Tour Guide">
+            </div>
             <div class="portfolio-info">
+              <span class="portfolio-tag">App</span>
               <h4>UAD Tour Guide</h4>
-              <p>App</p>
-              <a href="assets/img/portfolio/app4.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="app tour guide"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html?portfolio=tourguide" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="assets/img/portfolio/app4.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="app tour guide" aria-label="Preview UAD Tour Guide"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html?portfolio=tourguide" class="details-link" title="More Details" aria-label="Detail UAD Tour Guide"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
@@ -226,43 +244,58 @@
     </div><!-- End Portfolio Section -->
 
 
-    <!-- ======= Contact Section ======= -->
-    <div id="contact" class="paddsection">
+    <!-- ======= Why Hire Me Section ======= -->
+    <div id="why-hire-me" class="paddsection">
       <div class="container">
+        <p class="section-eyebrow text-center">Reasons to work with me</p>
         <h2 class="text-center">WHY HIRE ME ?</h2>
         <div class="row justify-content-center my-3 p-2">
           <div class="col-8 col-md-6 col-lg-3 text-center">
-            <h5>adaptive</h5>
-            <p class="my-1">as a Programmer I have the ability to adapt and learn quickly so as to be able to deal with changes in technology</p>
+            <div class="hire-card" data-reveal>
+              <h5>adaptive</h5>
+              <p class="my-1">as a Programmer I have the ability to adapt and learn quickly so as to be able to deal with changes in technology</p>
+            </div>
           </div>
           <div class="col-8 col-md-6 col-lg-3 text-center">
-            <h5>initiative</h5>
-            <p class="my-1">have self-awareness to do something to fulfill a thing</p>
+            <div class="hire-card" data-reveal>
+              <h5>initiative</h5>
+              <p class="my-1">have self-awareness to do something to fulfill a thing</p>
+            </div>
           </div>
           <div class="col-8 col-md-6 col-lg-3 text-center">
-            <h5>hard worker</h5>
-            <p class="my-1">someone who works hard and is patient in going through the process to achieve his goals</p>
+            <div class="hire-card" data-reveal>
+              <h5>hard worker</h5>
+              <p class="my-1">someone who works hard and is patient in going through the process to achieve his goals</p>
+            </div>
           </div>
           <div class="col-8 col-md-6 col-lg-3 text-center">
-            <h5>good communication</h5>
-            <p class="my-1">have good communication so that I can carry out the task well</p>
+            <div class="hire-card" data-reveal>
+              <h5>good communication</h5>
+              <p class="my-1">have good communication so that I can carry out the task well</p>
+            </div>
           </div>
         </div>
       </div>
-    </div><!-- End Contact Section -->
+    </div><!-- End Why Hire Me Section -->
 
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <div id="footer" class="text-center">
     <div class="container">
-      <div class="socials-media text-center">
-        <h2 class="text-secondary">GET IN TOUCH</h2>
-        <p>For business inquiry please send email : <a href="mailto:havindifm@gmail.com" class="text-primary">havindifm@gmail.com</a> </p>
-        
-      </div>
+      <div class="socials-media text-center" data-reveal>
+        <p class="section-eyebrow">Contact</p>
+        <h2>GET IN TOUCH</h2>
+        <p>For business inquiry please send email : <a href="mailto:havindifm@gmail.com">havindifm@gmail.com</a></p>
 
-      
+        <ul class="list-unstyled">
+          <li><a href="https://github.com/VinSyahputra/" aria-label="GitHub"><i class="bi bi-github"></i></a></li>
+          <li><a href="https://www.instagram.com/havindifm/" aria-label="Instagram"><i class="bi bi-instagram"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/havin-fahru-575644239/" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a></li>
+        </ul>
+
+        <p class="footer-credit">&copy; Havin Fahru — Backend &amp; Web Developer</p>
+      </div>
 
     </div>
   </div><!-- End Footer -->
@@ -276,6 +309,10 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/typed.js/typed.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Animation Vendor JS Files -->
+  <script src="assets/vendor/gsap/gsap.min.js"></script>
+  <script src="assets/vendor/gsap/ScrollTrigger.min.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
