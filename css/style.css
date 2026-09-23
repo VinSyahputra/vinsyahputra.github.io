@@ -182,7 +182,6 @@ section {
 
 .about {
   padding: 96px 0;
-  border-top: 1px solid var(--line);
 }
 
 .section-title {
@@ -263,7 +262,6 @@ section {
 
 .portfolio {
   padding: 96px 0;
-  border-top: 1px solid var(--line);
 }
 
 /* Hairline grid: gap 1px dengan background garis, tanpa shadow */
