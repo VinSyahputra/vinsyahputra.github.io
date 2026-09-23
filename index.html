@@ -1,284 +1,221 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta name="yandex-verification" content="6ebd2e49c1c4c634" />
-  <title>Portfolio - Havin Fahru</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Havin Fahru — Fullstack Developer</title>
+  <meta name="description" content="Portfolio Havin Fahru, Fullstack Developer dari Yogyakarta.">
+  <meta name="keywords" content="Havin Fahru, Fullstack Developer, Portfolio">
 
-  <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,500,500i,600,600i,700,700i,900,900i" rel="stylesheet">
+  <!-- Google Fonts: Space Grotesk (display) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-
-
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top ">
-    <div class="container d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo">Vin.Site</a>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link  scrollto" href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
+  <!-- ======= Nav ======= -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="#home">HF.</a>
+      <nav aria-label="Navigasi utama">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+      </nav>
     </div>
-  </header><!-- End Header -->
+  </header>
 
-  <!-- ======= Hero Section ======= -->
-  <div id="hero" class="home">
+  <main>
 
-    <div class="container">
-      <div class="hero-content">
-        <h1>I'm <span class="typed" data-typed-items="Havin Fahru, PHP Developer, Backend Developer, Freelancer, Website Developer"></span></h1>
-        <p>PHP Developer, Backend Developer, Freelancer, Website Developer</p>
-
-        <ul class="list-unstyled list-social">
-          <li><a href="https://github.com/VinSyahputra/"><i class="bi bi-github"></i></a></li>
-          <li><a href="https://www.instagram.com/havindifm/"><i class="bi bi-instagram"></i></a></li>
-          <li><a href="https://www.linkedin.com/in/havin-fahru-575644239/"><i class="bi bi-linkedin"></i></a></li>
-        </ul>
-      </div>
-    </div>
-  </div><!-- End Hero -->
-
-  <main id="main">
-
-    <!-- ======= About Section ======= -->
-    <div id="about" class="paddsection">
+    <!-- ======= Hero ======= -->
+    <section id="home" class="hero">
       <div class="container">
-        <div class="row justify-content-between">
-
-          <div class="col-lg-4 ">
-            <div class="div-img-bg">
-              <div class="about-img">
-                <img src="assets/img/me.jpg" class="img-responsive" alt="me">
-              </div>
-            </div>
+        <div class="hero-grid">
+          <div class="hero-text">
+            <p class="eyebrow" id="hero-eyebrow">Halo, saya</p>
+            <h1 id="hero-name">Havin<br>Fahru</h1>
+            <p class="hero-role" id="hero-role">Fullstack Developer</p>
+            <p class="hero-desc" id="hero-desc">Saya seorang Fullstack Developer dari Kota Yogyakarta
+              yang ingin menjadi seorang Programmer handal meski enggan ngoding.</p>
           </div>
-
-          <div class="col-lg-7">
-            <div class="about-descr">
-
-              <p class="p-heading">I'm a Backend Developer from Yogyakarta city who wants to be a <span class="h3">Professional</span class="h3">. </p>
-              <p class="separator">I started my Programmer career when i was still in college. as a Programmer I have the ability to adapt and learn quickly so as to be able to deal with changes in technology. </p>
-
-            </div>
-
+          <div class="hero-photo" id="hero-photo">
+            <!-- Avatar Hero. Untuk mengganti dengan foto lain, tukar src <img> ini. -->
+            <img class="hero-photo-img" src="assets/img/me.jpg" alt="Foto Havin Fahru">
           </div>
         </div>
       </div>
-    </div><!-- End About Section -->
+    </section>
 
-    <!-- ======= Services Section ======= -->
-    <div id="services">
+    <!-- ======= About ======= -->
+    <section id="about" class="about">
       <div class="container">
+        <h2 class="section-title">About</h2>
+        <div class="about-grid">
 
-        <div class="services-slider swiper" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="services-block">
-                <i class='bx bxl-php'></i>
-                <span>PHP</span>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="services-block">
-                <i class='bx bxl-javascript'></i>
-                <span>JAVASCRIPT</span>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="services-block">
-                <i class='bx bxs-hot'></i>
-                <span>CODEIGNITER</span>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="services-block">
-                <i class='bx bx-cube-alt'></i>
-                <span>LARAVEL</span>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="services-block">
-                <i class='bx bxs-data' ></i>
-                <span>MYSQL</span>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="services-block">
-                <i class='bx bx-code-alt' ></i>
-                <span>HTML & CSS</span>
-              </div>
-            </div><!-- End testimonial item -->
-
-
+          <div class="about-edu">
+            <h3 class="about-label">Pendidikan Terakhir</h3>
+            <!-- TODO: data dummy — ganti dengan pendidikan asli -->
+            <div class="edu-item reveal">
+              <h4>S1 Teknik Informatika</h4>
+              <p class="edu-org">Universitas Ahmad Dahlan, Yogyakarta</p>
+              <p class="edu-year">2018 — 2022</p>
+            </div>
           </div>
-          <div class="swiper-pagination"></div>
+
+          <div class="about-exp">
+            <h3 class="about-label">Riwayat Pekerjaan</h3>
+            <article class="exp-item reveal">
+              <p class="exp-period">Jul 2025 — Sekarang · Yogyakarta (Hybrid)</p>
+              <h4>Back End Developer</h4>
+              <p class="exp-org">Tonjoo · Contract</p>
+              <p class="exp-desc">Membangun dan mengelola sistem backend berskala besar serta RESTful API
+                menggunakan Laravel dan NestJS, mengoptimalkan query database, dan merancang ERD.
+                Menghubungkan logika backend dengan antarmuka dinamis lewat Livewire, Inertia.js, dan
+                React, serta menerapkan Docker dan CI/CD pipeline. Mengembangkan solusi CMS WordPress
+                sesuai kebutuhan proyek.</p>
+            </article>
+            <article class="exp-item reveal">
+              <p class="exp-period">Okt 2024 — Jun 2025 · Malaysia (Remote)</p>
+              <h4>Back End Developer</h4>
+              <p class="exp-org">Chup Online · Freelance</p>
+              <p class="exp-desc">Membangun dan mengelola backend API berskala besar menggunakan Laravel
+                dan NestJS — merancang ERD, membuat RESTful endpoint untuk integrasi frontend, dan
+                mengoptimalkan query database kompleks untuk meningkatkan performa.</p>
+            </article>
+            <article class="exp-item reveal">
+              <p class="exp-period">Jun 2024 — Des 2024 · Yogyakarta (On-site)</p>
+              <h4>Full Stack Web Developer</h4>
+              <p class="exp-org">PT. Exindo Information Technology · Contract</p>
+              <p class="exp-desc">Mengembangkan dan memelihara situs web dinamis menggunakan framework
+                PHP seperti CodeIgniter 4, dengan fokus pada fungsionalitas yang efisien dan performa
+                yang andal.</p>
+            </article>
+            <article class="exp-item reveal">
+              <p class="exp-period">Mar 2023 — Jun 2024 · Sleman, Yogyakarta (On-site)</p>
+              <h4>Website Developer</h4>
+              <p class="exp-org">Jogja Tourism Training Center (JTTC) · Contract</p>
+              <p class="exp-desc">Mengembangkan dan memelihara situs web berbasis PHP dengan pola MVC,
+                membuat dan mengintegrasikan API, serta merancang situs web WordPress menggunakan
+                Elementor untuk meningkatkan fungsionalitas dan pengalaman pengguna.</p>
+            </article>
+            <article class="exp-item reveal">
+              <p class="exp-period">Jan 2022 — Jan 2023 · Bantul, Yogyakarta (Hybrid)</p>
+              <h4>Software Developer</h4>
+              <p class="exp-org">cv.gps studio · Part-time</p>
+              <p class="exp-desc">Mengerjakan berbagai proyek, termasuk pengembangan game interaktif
+                menggunakan Unity dan C#, memelihara situs web CodeIgniter 4 beserta performa dan
+                keandalannya, serta membuat situs web 3D dengan framework A-Frame.</p>
+            </article>
+            <article class="exp-item reveal">
+              <p class="exp-period">Mar 2021 — Sep 2021 · Yogyakarta (Hybrid)</p>
+              <h4>Web Developer</h4>
+              <p class="exp-org">PT. Bank BPD DIY · Internship</p>
+              <p class="exp-desc">Mengembangkan dua aplikasi berbasis web menggunakan CodeIgniter 4 dan
+                membangun lingkungan web server lengkap dengan Linux, Apache, MySQL, dan PHP.</p>
+            </article>
+          </div>
+
         </div>
-
       </div>
+    </section>
 
-    </div><!-- End Services Section -->
-
-    <!-- ======= Portfolio Section ======= -->
-    <div id="portfolio" class="paddsection">
-
+    <!-- ======= Portfolio ======= -->
+    <section id="portfolio" class="portfolio">
       <div class="container">
-        <div class="section-title text-center">
-          <h2>My Portfolio</h2>
-        </div>
+        <h2 class="section-title">Portfolio</h2>
       </div>
-
       <div class="container">
-
-        <div class="row">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-game">Game</li>
-              <li data-filter=".filter-web">Web</li>
-              <li data-filter=".filter-service">Service</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="row portfolio-container">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="assets/img/portfolio/app1.png" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Sistem Informasi Peminjaman Ruangan</h4>
-              <p>Web</p>
-              <a href="assets/img/portfolio/app1.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="web sipur"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html?portfolio=sipur" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="assets/img/portfolio/app2.png" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Sistem Manajemen Kontrak</h4>
-              <p>Web</p>
-              <a href="assets/img/portfolio/app2.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="web simak"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html?portfolio=simak" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-game">
-            <img src="assets/img/portfolio/app3.png" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Game Alfabeta</h4>
-              <p>Game</p>
-              <a href="assets/img/portfolio/app3.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="game alfabeta"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html?portfolio=alfabeta" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="assets/img/portfolio/app4.png" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>UAD Tour Guide</h4>
-              <p>App</p>
-              <a href="assets/img/portfolio/app4.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="app tour guide"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html?portfolio=tourguide" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-
-        </div>
-
+        <!-- Card project dirender oleh js/main.js dari array `projects` -->
+        <div class="portfolio-grid" id="portfolio-grid"></div>
+        <div class="portfolio-sentinel" id="portfolio-sentinel" aria-hidden="true"></div>
       </div>
+    </section>
 
-    </div><!-- End Portfolio Section -->
-
-
-    <!-- ======= Contact Section ======= -->
-    <div id="contact" class="paddsection">
-      <div class="container">
-        <h2 class="text-center">WHY HIRE ME ?</h2>
-        <div class="row justify-content-center my-3 p-2">
-          <div class="col-8 col-md-6 col-lg-3 text-center">
-            <h5>adaptive</h5>
-            <p class="my-1">as a Programmer I have the ability to adapt and learn quickly so as to be able to deal with changes in technology</p>
-          </div>
-          <div class="col-8 col-md-6 col-lg-3 text-center">
-            <h5>initiative</h5>
-            <p class="my-1">have self-awareness to do something to fulfill a thing</p>
-          </div>
-          <div class="col-8 col-md-6 col-lg-3 text-center">
-            <h5>hard worker</h5>
-            <p class="my-1">someone who works hard and is patient in going through the process to achieve his goals</p>
-          </div>
-          <div class="col-8 col-md-6 col-lg-3 text-center">
-            <h5>good communication</h5>
-            <p class="my-1">have good communication so that I can carry out the task well</p>
-          </div>
-        </div>
-      </div>
-    </div><!-- End Contact Section -->
-
-  </main><!-- End #main -->
+  </main>
 
   <!-- ======= Footer ======= -->
-  <div id="footer" class="text-center">
-    <div class="container">
-      <div class="socials-media text-center">
-        <h2 class="text-secondary">GET IN TOUCH</h2>
-        <p>For business inquiry please send email : <a href="mailto:havindifm@gmail.com" class="text-primary">havindifm@gmail.com</a> </p>
-        
-      </div>
-
-      
-
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="footer-copy">&copy; 2026 Havin Fahru. All rights reserved.</p>
+      <ul class="socials">
+        <li>
+          <a href="mailto:havindifm@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" class="icon-stroke" aria-hidden="true">
+              <rect x="2.5" y="5" width="19" height="14" rx="2"></rect>
+              <path d="m3.5 6.5 8.5 6.5 8.5-6.5"></path>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/VinSyahputra/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg viewBox="0 0 16 16" class="icon-fill" aria-hidden="true">
+              <path
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z">
+              </path>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/havin-fahru-575644239/" target="_blank" rel="noopener noreferrer"
+            aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" class="icon-fill" aria-hidden="true">
+              <path
+                d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.2 8.5h4.6V24H.2V8.5Zm8 0h4.4v2.1h.06c.61-1.16 2.1-2.38 4.33-2.38 4.63 0 5.48 3.05 5.48 7.01V24h-4.6v-7.09c0-1.7-.03-3.88-2.37-3.88-2.37 0-2.73 1.85-2.73 3.76V24H8.2V8.5Z">
+              </path>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/havindifm/" target="_blank" rel="noopener noreferrer"
+            aria-label="Instagram">
+            <svg viewBox="0 0 24 24" class="icon-stroke" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+              <circle cx="12" cy="12" r="4"></circle>
+              <circle cx="17.3" cy="6.7" r="1.1" class="icon-fill-dot"></circle>
+            </svg>
+          </a>
+        </li>
+      </ul>
     </div>
-  </div><!-- End Footer -->
+  </footer>
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- Tombol kembali ke atas: ikon saja, fixed pojok kanan bawah, muncul setelah scroll -->
+  <button type="button" class="back-to-top" id="back-to-top" aria-label="Kembali ke atas">
+    <svg viewBox="0 0 24 24" class="icon-stroke" aria-hidden="true">
+      <path d="M12 19V5m-6 6 6-6 6 6"></path>
+    </svg>
+  </button>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <!-- ======= Project detail modal ======= -->
+  <div class="modal" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-panel">
+      <button type="button" class="modal-close" data-close aria-label="Tutup detail project">&times;</button>
+      <video id="modal-video" controls preload="none" playsinline></video>
+      <div class="modal-body">
+        <h3 id="modal-title"></h3>
+        <dl class="modal-meta">
+          <div><dt>Kategori</dt><dd id="modal-kategori"></dd></div>
+          <div><dt>Klien</dt><dd id="modal-klien"></dd></div>
+        </dl>
+        <p id="modal-desc" class="modal-desc"></p>
+      </div>
+    </div>
+  </div>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <!-- GSAP pinned version, UMD build, sebelum script yang memakainya -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
 
 </body>
 
